@@ -1,0 +1,122 @@
+@import './global';
+@import './cards';
+
+.blog {                //Aqui empieza la anidación desde el selector padre
+  background-color: $white; // Aquí hay una variable que define el color blanco 
+  max-width: unset;
+  padding: 5% 10%;
+
+  .title {
+    @extend %base-title; //Aqui hay una herencia
+    text-align: left;
+  }
+
+  .process-list {
+    margin-top: 40px;
+    margin-bottom: 36px;
+
+    .process {
+      margin-bottom: 25px;
+      display: flex;
+      & > div {      // Desde aquí hay otra anidación y hace referencia al selector  principal (padre) con el operador & en una anidación interna.
+        & > h3 {
+          color: $dark-green;
+          margin-bottom: 0;
+          font-size: 30px;
+          font-weight: 500;
+        }
+        & > p {
+          color: $dark-green-text;
+          margin: 0;
+        }
+      }
+
+      .process-icon {
+        width: 60px;
+        height: 60px;
+      
+        text-align: center;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+  
+  button {
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 15px 20px 15px 20px;
+    color:$white;
+    background-color:$dark-green;
+    border: 0px;
+    width: 200px;
+    height: auto;
+  }
+}
+
+.row{
+    display: flex;
+}
+
+.col{
+    width: 40%;
+    margin: 1em;
+}
+
+.card{
+    width: 100%;
+    margin:20px;
+    border-radius:5px;
+    border: 1px solid #dadada;
+    box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    overflow: hidden;
+
+    .img{
+        width: 100%;
+        
+    }
+
+    .card-title {
+        @extend %text; //Aqui hay una herencia
+        @include font-size(20px);
+        padding: 10px 10px;
+        padding-top: 0;
+        padding-bottom:0;
+    }
+    .entry-metadata{
+        @include font-size(14px);
+        font-family:$font-card;
+        padding: 10px 10px;
+        padding-bottom:0;
+        .category{
+            color: $light-green-category;
+        }
+        .read-time{
+            color:$light-gray-read;
+        }
+    }
+    .card-text{
+        @extend %text;
+        @include font-size(18px);
+        padding: 10px 10px;
+        
+        .read-more{
+            text-decoration: underline;
+        }
+    }
+
+    .author{
+        display: flex; //Aqui hay una herencia
+        @include font-size(14px);
+        font-family:$font-card;
+        font-weight: bold;
+       img{
+            width: 35px;
+            border-radius: 50%;
+            padding: 10px;
+        }
+    }
+
+}

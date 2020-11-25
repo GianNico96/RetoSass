@@ -1,0 +1,24 @@
+/*Variables de los colores*/
+
+$gray:#4a4a4a;
+$light-green-category:#67b54b;
+$light-gray-read:#979797;
+
+/*Fuente card*/
+$font-card:'IBM Plex Sans', sans-serif;
+
+/*Mixin*/
+@mixin font-size ($size) {      //Mixin para agregar como parámetro el tamaño de fuente.
+    font-size:$size;
+}
+/*Herencia*/
+%text{                //Herencia sobre las fuentes del texto.
+    color: $gray;
+    font-family:$font-card;
+}
+
+
+
+
+
+

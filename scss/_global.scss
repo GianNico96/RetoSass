@@ -1,0 +1,17 @@
+/** colores */
+
+$dark-green: #025157;    // Aquí hay Variables 
+$dark-green-text: #135359;
+$white: #ffffff;
+
+/** fuentes */
+$font-title: "Alegreya", serif;
+
+
+/** placeholders */  
+
+%base-title{     //Aquí hay una herencia
+    font-size: $font-title;
+    color: $dark-green-text;
+}
+
